@@ -62,7 +62,7 @@
                     </div>
                     <div class="col-md-8">
                         <h2>{{this.monthsList[this.monthsNow]}} {{this.yearNow}}</h2>
-                        <div class="p-2 text-muted calendar-day"  v-for="day in days" v-show="days.length">
+                        <div :class="getEvents(day) ? 'p-2 text-muted calendar-day bg-success':'p-2 text-muted calendar-day'"  v-for="day in days" v-show="days.length">
                             <div class="row">
                                 <div class="col-md-3">
                                     <span class="day">{{day}}</span> &nbsp; <span class="week">{{getWeek(day)}}</span>
@@ -194,5 +194,8 @@
 }
 .calendar-day{
     border-bottom: 1px solid #ccc;
+}
+.bg-success{
+    background-color: #EEFCEF !important;
 }
 </style>

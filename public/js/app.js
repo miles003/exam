@@ -6572,7 +6572,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.weekdays{\n    display: flex;\n}\n.cbox{\n    flex: 1;\n}\n.calendar-day{\n    border-bottom: 1px solid #ccc;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.weekdays{\n    display: flex;\n}\n.cbox{\n    flex: 1;\n}\n.calendar-day{\n    border-bottom: 1px solid #ccc;\n}\n.bg-success{\n    background-color: #EEFCEF !important;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -41277,7 +41277,9 @@ var render = function() {
                         expression: "days.length"
                       }
                     ],
-                    staticClass: "p-2 text-muted calendar-day"
+                    class: _vm.getEvents(day)
+                      ? "p-2 text-muted calendar-day bg-success"
+                      : "p-2 text-muted calendar-day"
                   },
                   [
                     _c("div", { staticClass: "row" }, [
