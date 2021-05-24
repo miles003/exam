@@ -24,10 +24,11 @@ class getDesiredDateRepository
             $day_num = $day->format("N"); /* 'N' number days 1 (mon) to 7 (sun) */
             $s = in_array(true, $weeks);
             if ($s) {
-                if ($weeks[$day_num - 1]) { /* weekday */
+                $newday = $day_num == 7 ? 0:$day_num;
+                if ($weeks[$newday] == true) { /* weekday */
                     $days[] = [
                         'date' => $day->format("Y-m-d"),
-                        'event' => $event,
+                        'event' => $newday,
                         'created_at' => Carbon::now(),
                         'updated_at' => Carbon::now()
                     ];
@@ -35,7 +36,7 @@ class getDesiredDateRepository
             } else {
                 $days[] = [
                     'date' => $day->format("Y-m-d"),
-                    'event' => $event,
+                    'event' => $day_num,
                     'created_at' => Carbon::now(),
                     'updated_at' => Carbon::now()
                 ];
