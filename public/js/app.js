@@ -1997,7 +1997,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       })["catch"](function (e) {
         Swal.fire({
           position: 'top-end',
-          icon: 'danger',
+          icon: 'error',
           title: e.response.data.message,
           showConfirmButton: false,
           timer: 1500
