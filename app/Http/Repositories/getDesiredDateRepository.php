@@ -28,7 +28,7 @@ class getDesiredDateRepository
                 if ($weeks[$newday] == true) { /* weekday */
                     $days[] = [
                         'date' => $day->format("Y-m-d"),
-                        'event' => $newday,
+                        'event' => $event,
                         'created_at' => Carbon::now(),
                         'updated_at' => Carbon::now()
                     ];
@@ -36,7 +36,7 @@ class getDesiredDateRepository
             } else {
                 $days[] = [
                     'date' => $day->format("Y-m-d"),
-                    'event' => $day_num,
+                    'event' => $event,
                     'created_at' => Carbon::now(),
                     'updated_at' => Carbon::now()
                 ];
