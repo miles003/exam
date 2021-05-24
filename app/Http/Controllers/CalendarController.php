@@ -49,6 +49,7 @@ class CalendarController extends Controller
     public function store(CalendarRequest $request)
     {
         $date = $this->getDesiredDateRepository->_getDate($request->event, $request->weeks, $request->from, $request->to);
+        $this->destroy();
         Calendar::insert($date);
         return $date;
     }
