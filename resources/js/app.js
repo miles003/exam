@@ -5,7 +5,8 @@
  */
 
 require('./bootstrap');
-
+import router from './router';
+import App from './layouts/App.vue';
 window.Vue = require('vue').default;
 import Swal from 'sweetalert2'
 window.Swal = Swal;
@@ -28,6 +29,8 @@ Vue.component('calendar-component', require('./components/CalendarComponent.vue'
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-const app = new Vue({
+ const app = new Vue({
+    router,
     el: '#app',
+    render: h => h(App)
 });

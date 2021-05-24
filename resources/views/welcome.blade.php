@@ -10,7 +10,6 @@
 </head>
 <body>
     <div id="app">
-        <calendar-component/>
     </div>
 </body>
 </html>

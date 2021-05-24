@@ -14,8 +14,14 @@ use App\Http\Controllers\CalendarController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 Route::delete('calendar', [CalendarController::class,'destroy']);
 Route::resource('calendar', CalendarController::class);
+
+Route::get('/{any}', 
+    function () {
+        return view('welcome');
+    }
+)->where('any', '.*');
